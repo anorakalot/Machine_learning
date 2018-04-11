@@ -1,9 +1,11 @@
 from numpy import exp,array,random,dot
+#from os import time
+import time
 
 class NeuralNetwork(object):
     def __init__(self):
 
-        random.seed()
+        random.seed(int(time.time()))
 
         self.random_weights = 2 * random.random((3,1)) -1
 
@@ -65,3 +67,9 @@ if __name__ == "__main__":
     print ("Testing with new input! [1,0,0]")
 
     print (neural_network.think(array([1,0,0])))
+
+
+
+    print("Testing with another input [0,0,1]")
+
+    print (neural_network.think(array([0,0,1])))
