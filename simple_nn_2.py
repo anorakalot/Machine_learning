@@ -20,7 +20,7 @@ class NeuralNetwork(object):
 
 
     def train(self,training_set_inputs,training_set_outputs,number_of_training_iterations):
-        for step in xrange(number_of_training_iterations):
+        for step in range(number_of_training_iterations):
             #find the output
             output = self.think(training_set_inputs)
 
@@ -53,8 +53,8 @@ if __name__ == "__main__":
 
     print (neural_network.random_weights)
 
-    training_set_inputs = array([[0,0,1],[1,1,1],[1,0,1],[0,1,1]])
-    training_set_outputs = array([[0,1,1,0]]).T
+    training_set_inputs = array([[0,0,1],[1,1,1],[1,0,1],[0,1,1],[1,0,0],[0,0,1]])
+    training_set_outputs = array([[0,1,1,0,1,0]]).T
 
     neural_network.train(training_set_inputs,training_set_outputs,10000)
 
