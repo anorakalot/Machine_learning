@@ -4,9 +4,10 @@ import time
 
 class NeuralNetwork(object):
     def __init__(self):
-
+        #tandomize the random seed
         random.seed(int(time.time()))
 
+        #make the first weights a random 3 X 1 matrix
         self.random_weights = 2 * random.random((3,1)) -1
 
 
@@ -20,7 +21,7 @@ class NeuralNetwork(object):
         return x * (1-x)
 
 
-
+#training function
     def train(self,training_set_inputs,training_set_outputs,number_of_training_iterations):
         for step in range(number_of_training_iterations):
             #find the output
@@ -73,3 +74,9 @@ if __name__ == "__main__":
     print("Testing with another input [0,0,1]")
 
     print (neural_network.think(array([0,0,1])))
+
+
+
+    print ("Testing with new input! [0,1,1]")
+
+    print (neural_network.think(array([0,1,1])))
